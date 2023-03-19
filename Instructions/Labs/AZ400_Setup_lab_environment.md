@@ -10,14 +10,19 @@ lab:
 
 ## Instructions
 
-> **Note**: Start at step 4, if you do already have a **personal Microsoft Account** setup and an active Microsoft Azure Pass subscription linked to that account.
+1. Open a browser and navigate to [https://DevOps.azure.com](https://DevOps.azure.com), then then select Login, ther use your UC credentials to login.
 
+1. Verify your organization it should be **University of Cincinnati** as shown in the below screenshot or select the **Switch Organization** and switch to **University of Cincinnati**
+![Create Project](images/Organiation-verify.png)
 
-1. Open a browser and navigate to [https://portal.azure.com](https://portal.azure.com), then search at the top of the Azure portal screen for **Azure DevOps**. In the resulting page, click **Azure DevOps organizations**.
 1. Next, click on the link labelled **My Azure DevOps Organizations** or navigate directly to [https://aex.dev.azure.com](https://aex.dev.azure.com).
+
 1. On the **We need a few more details** page, select **Continue**.
+
 1. In the drop-down box on the left, choose **Default Directory**, instead of “Microsoft Account”.
+
 1. If prompted (*"We need a few more details"*), provide your name, e-mail address, and location and click **Continue**.
+
 1. Back at [https://aex.dev.azure.com](https://aex.dev.azure.com) with **Default Directory** selected click the blue button **Create new organization**.
 1. Accept the *Terms of Service* by clicking **Continue**.
 1. If prompted (*"Almost done"*), leave the name for the Azure DevOps organization at default (it needs to be a globally unique name) and pick a hosting location close to you from the list.
