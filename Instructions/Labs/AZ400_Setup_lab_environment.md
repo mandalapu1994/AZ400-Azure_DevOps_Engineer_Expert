@@ -28,20 +28,26 @@ lab:
     | We'll reach you at | Give your **UC email** |
     | From | **United States** |
 
-1. In the drop-down box on the left, choose **Default Directory**, instead of “Microsoft Account”.
-
-1. If prompted (*"We need a few more details"*), provide your name, e-mail address, and location and click **Continue**.
-
-1. Back at [https://aex.dev.azure.com](https://aex.dev.azure.com) with **Default Directory** selected click the blue button **Create new organization**.
+1. In [https://aex.dev.azure.com](https://aex.dev.azure.com) click the blue button **Create new organization**.
 1. Accept the *Terms of Service* by clicking **Continue**.
-1. If prompted (*"Almost done"*), leave the name for the Azure DevOps organization at default (it needs to be a globally unique name) and pick a hosting location close to you from the list.
+1. In prompt **"Almost done"**, use below details and select **Continue**.
+
+    | Entry | Value |
+    | -- | -- |
+    | Name your Azure DevOps Organization | Give your **<6+2>**|
+    | We'll host your projects in | **Central US** |
+    | Captcha | Enter the characters you see |
+
 1. Once the newly created organization opens in **Azure DevOps**, click **Organization settings** in the bottom left corner.
+
 1. At the **Organization settings** screen click **Billing** (opening this screen takes a few seconds).
-1. Click **Setup billing** and on the right-hand side of the screen select the **Azure Pass - Sponsorship** subscription and click **Save** to link the subscription with the organization.
-1. Once the screen shows the linked Azure Subscription ID at the top, change the number of **Paid parallel jobs** for **MS Hosted CI/CD** from 0 to **1**. Then click the **SAVE** button at the bottom.
+
+    > Note: For **AZ400 DevOps Engineer Expert** class we will be using a **free tire of Azure DevOps**, you will only have access to the limited minutes of CI/CD pipelines and since there only **1 Self-Hosted CI/CD** is available; you will be depended on the traffic or number of users using the same services, so I suggest you to work on the labs as early as possible.
+
 1. In **Organization Settings**, go to section **Security** and click **Policies**.
+
 1. Toggle the switch to **On** for **Third-party application access via OAuth**
     > Note: The OAuth setting helps enable tools such as the DemoDevOpsGenerator to register extensions. Without this, several labs may fail due to a lack of the required extensions.
+
 1. Toggle the switch to **On** for **Allow public projects**
     > Note: Extensions used in some labs might require a public project to allow using the free version.
-1. **Wait at least 3 hours before using the CI/CD capabilities** so that the new settings are reflected in the backend. Otherwise, you will still see the message *"No hosted parallelism has been purchased or granted"*.
