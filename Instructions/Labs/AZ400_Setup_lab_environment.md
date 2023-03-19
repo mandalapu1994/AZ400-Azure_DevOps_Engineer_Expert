@@ -10,15 +10,22 @@ lab:
 
 ## Instructions
 
-1. Open a browser and navigate to [https://DevOps.azure.com](https://DevOps.azure.com), then then select Login, ther use your UC credentials to login.
+1. Open a browser and navigate to [https://portal.azure.com](https://portal.azure.com), then then select Login, ther use your UC credentials to login.
 
 1. Verify your organization it should be **University of Cincinnati** as shown in the below screenshot or select the **Switch Organization** and switch to **University of Cincinnati**
 
     ![Create Project](images/organization-verify.png)
 
+1. Search for DevOps and select **Azure DevOps Organizations**.
+
 1. Next, click on the link labelled **My Azure DevOps Organizations** or navigate directly to [https://aex.dev.azure.com](https://aex.dev.azure.com).
 
-1. On the **We need a few more details** page, select **Continue**.
+1. On the **We need a few more details** page, enter below details and select **Continue**.
+
+    | Entry | Value |
+    | Your name | Give your name here |
+    | We'll reach you at | Give your **UC email** |
+    | From | **United States** |
 
 1. In the drop-down box on the left, choose **Default Directory**, instead of “Microsoft Account”.
 
