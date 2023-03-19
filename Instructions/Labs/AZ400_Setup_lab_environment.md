@@ -23,6 +23,7 @@ lab:
 1. On the **We need a few more details** page, enter below details and select **Continue**.
 
     | Entry | Value |
+    | -- | -- |
     | Your name | Give your name here |
     | We'll reach you at | Give your **UC email** |
     | From | **United States** |
