@@ -12,8 +12,6 @@ lab:
 
 - This lab requires **Microsoft Edge** or an [Azure DevOps supported browser.](https://docs.microsoft.com/en-us/azure/devops/server/compatibility?view=azure-devops#web-portal-supported-browsers)
 
-- **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
-
 ## Lab overview
 
 In this lab, you'll learn about the agile planning and portfolio management tools and processes provided by Azure Boards and how they can help you quickly plan, manage, and track work across your entire team. You'll explore the product backlog, sprint backlog, and task boards that can track the flow of work during an iteration. We'll also look at the enhanced tools in this release to scale for larger teams and organizations.
@@ -35,8 +33,6 @@ After you complete this lab, you will be able to:
 
 ### Exercise 0: Configure the lab prerequisites
 
-> **Note**: If you already created this project during previous labs, this exercise can be skipped.
-
 In this exercise, you will set up the prerequisites for the lab, which consist of a new Azure DevOps project with a repository based on the [eShopOnWeb](https://github.com/MicrosoftLearning/eShopOnWeb). 
 
 #### Task 1:  Create and configure the team project
@@ -48,6 +44,8 @@ In this task, you will create an **EShopOnWeb** Azure DevOps project to be used 
  Click on **Create**.
 
     ![Create Project](images/create-project.png)
+
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the Project created.
 
 ### Exercise 1: Manage Agile project
 
@@ -74,6 +72,8 @@ Each new project is configured with a default team, which name matches the proje
 1. On the **Create a new team** pane, in the **Team name** textbox, type **EShop-Web**, leave other settings with their default values, and click **Create**.
 
     ![In "create a new team" window, call your new team "EShop-Web" and click "Create"](images/m1/eshopweb-team_v1.png)
+
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the newly created team with your name or full URL visible.
 
 1. In the list of **Teams**, select the newly created team to view its details.
 
@@ -133,12 +133,14 @@ Work items play a prominent role in Azure DevOps. Whether describing work to be 
 
     > **Note**: The work item form includes all of the relevant work item settings. This includes details about who it's assigned to, its status across many parameters, and all the associated information and history for how it has been handled since creation. One of the key areas to focus on is the **Related Work**. We will explore one of the ways to add a feature to this epic.
 
-1. In the **Related work** section on the lower right-side, select the **Add link** entry and, in the dropdown list, select **New item**.
+1. In the **Related work** section on the lower right-side, select the **Add link** entry and in the dropdown list, select **New item**.
 1. On the **Add link** panel, in the **Link Type** dropdown list, select **Child**. Next, in the **Work item type** dropdown list, select **Feature**, in the **Title** textbox, type **Training dashboard** and click **OK**.
 
     ![Include Title "Training Dashboard" and click "OK"](images/m1/EShop-WEB-child_feature_v1.png)
 
     > **Note**: On the **Training dashboard** panel, note that the assignment, **Area**, and **Iteration** are already set to the same values as the epic that the feature is based on. In addition, the feature is automatically linked to the parent item it was created from.
+
+    >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the similar screen above with your name or full URL visible.
 
 1. On the **Training dashboard** panel, click **Save & Close**.
 
@@ -163,6 +165,8 @@ Work items play a prominent role in Azure DevOps. Whether describing work to be 
 1. Repeat the previous step to add two more PBIs designed to enable the customer to see their recently viewed tutorials and to request new tutorials named, respectively, **As a customer, I want to see tutorials I recently viewed** and **As a customer, I want to request new tutorials**.
 
     ![Repeat by clicking on "Add Product Backlog" ](images/m1/EShop-WEB-pbis_v1.png)
+
+    >**[Screenshot 4](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the similar screen above with your name or full URL visible.
 
 1. On the **Boards** panel, in the upper right corner, select the **Features** entry and, in the dropdown list, select **Backlog items**.
 
@@ -207,6 +211,8 @@ Work items play a prominent role in Azure DevOps. Whether describing work to be 
 
 1. Repeat the last five steps to add another task named **Optimize data query for most recent tutorials**. Set its **Remaining Work** to **3** and its **Activity** to **Design**. Click **Save & Close** once completed.
 
+    >**[Screenshot 5](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the newly added task **Optimize data query for most recent tutorials**
+
 #### Task 3: Manage sprints and capacity
 
 In this task, you will step through common sprint and capacity management tasks.
@@ -245,6 +251,8 @@ The sprint backlog should contain all the information the team needs to successf
 1. Select the **Taskboard** tab of the **Sprints** view.
 
     ![Review the "Work details" section information, all timing bars should be green. ](images/m1/EShop-WEB-work_details_window_v1.png)
+
+    >**[Screenshot 6](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the similar screen above with your name or full URL visible.
 
     > **Note**: Note that the **Work details** panel has been updated to reflect your available bandwidth. The actual number displayed in the **Work details** panel might vary, but your total sprint capacity will be equal to the number of working days remaining till the end of the sprint, since you allocated 1 hour per day. Take a note of this value since you will use it in the upcoming steps.
 
@@ -324,6 +332,8 @@ To maximize a team's ability to consistently deliver high quality software, Kanb
 1. On the **As a customer, I want to view new tutorials** panel, click **Save & Close**.
 
     ![On the ""As a customer, I want to view new tutorials" panel, click "Save & Close"](images/m1/EShop-WEB-tags_v1.png)
+
+    >**[Screenshot 7](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the similar screen above with your name or full URL visible.
 
     > **Note**: The two tags are now visible on the card, with the **data** tag highlighted in yellow as configured.
 
@@ -441,6 +451,8 @@ All processes are shared within the same organization. That is, one or more team
 
     > **Note**: Once the work item is saved, Azure DevOps will also save the new custom information so that it will be available for queries and through the rest of Azure DevOps.
 
+    >**[Screenshot 8](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the similar screen above with your name or full URL visible.
+
 ### Exercise 2 (optional) : Define dashboards
 
 In this task, you will step through the process of creating dashboards and their core components.
@@ -472,6 +484,8 @@ Dashboards allow teams to visualize status and monitor progress across the proje
 
     ![Review finished dashboard should include both widgets](images/m1/EShop-WEB-finished_dashboard_v1.png)
 
+    >**[Screenshot 9](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the similar screen above with your name or full URL visible.
+
     > **Note**: You can now review two important aspects of your current sprint on your custom dashboard.
 
     > **Note**: Another way of customizing dashboards is to generate charts based on work item queries, which you can share to a dashboard.
@@ -489,6 +503,8 @@ Dashboards allow teams to visualize status and monitor progress across the proje
 1. On the **Configure Chart** panel, in the **Name** textbox, type **Web tasks - By assignment**, in the **Group by** dropdown list, select **Assigned To**, and click **OK** to save the changes.
 
     ![On the "Configure Chart" panel, in the "Name" textbox, type "Web tasks - By assignment", in the "Group by" dropdown list, select "Assigned To", and click "OK" to save the changes](images/m1/EShop-WEB-chart_v1.png)
+
+    >**[Screenshot 10](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M01_L01_Agile_Planning_and_Portfolio_Management_with_Azure_Boards.md)**: Show the similar screen above with your name or full URL visible.
 
     > **Note**: You can now add this chart to a dashboard.
 
