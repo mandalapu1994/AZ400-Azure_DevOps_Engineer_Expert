@@ -232,7 +232,7 @@ The sprint backlog should contain all the information the team needs to successf
 
 1.  In the rectangle representing the **Add page for most recent tutorials**, click the **Unassigned** entry and, in the list of user accounts, select your account to assign the task to yourself.
 
-1. Select the **Capacity** tab of the **Sprints** view.
+1. Select the **Capacity** tab of the **Sprints** view and select **Add user** to add yourself.
 
     > **Note**: This view enables you to define what activities a user can take on and at what level of capacity.
 
