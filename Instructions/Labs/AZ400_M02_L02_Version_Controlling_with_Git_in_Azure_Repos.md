@@ -140,7 +140,7 @@ In this task, you will step through the process of cloning a Git repository by u
 
     > **Note**: You can ignore warnings you might receive regarding problems with loading of the project. The solution may not be in the state suitable for a build, but we're going to focus on working with Git, so building the project is not required.
 
-    >**[Screenshot 2 (https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)]**: Show the cloned repository in VS Code.
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the cloned repository in VS Code.
 
 ### Exercise 2: Save work with commits
 
