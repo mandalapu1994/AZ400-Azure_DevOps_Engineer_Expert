@@ -14,7 +14,7 @@ lab:
 
 - **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
 
-- If you don't have Git 2.29.2 or later installed yet, start a web browser, navigate to the [Git for Windows download page](https://gitforwindows.org/) download it, and install it.
+- If you don't have Git 2.29.2 or later installed yet, start a web browser, navigate to the [Git for Windows download page](https://gitforwindows.org/) download it, and install it. If you are using any other operating system download and install respective vscode package from google. Go with recommended installation to reduce errors.
 - If you don't have Visual Studio Code installed yet, from the web browser window, navigate to the [Visual Studio Code download page](https://code.visualstudio.com/), download it, and install it.
 - If you don't have Visual Studio C# extension installed yet, in the web browser window, navigate to the [C# extension installation page](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) and install it.
 
@@ -70,6 +70,8 @@ In this task you will import the eShopOnWeb Git repository that will be used by 
     - **.github** folder container YAML GitHub workflow definitions.
     - **src** folder contains the .NET 6 website used on the lab scenarios.
 
+>**[Screenshot 1]**: Show the imported repository.
+
 #### Task 3: Configure Git and Visual Studio Code
 
 In this task, you will install and configure Git and Visual Studio Code, including configuring the Git credential helper to securely store the Git credentials used to communicate with Azure DevOps. If you have already implemented these prerequisites, you can proceed directly to the next task.
@@ -81,7 +83,7 @@ In this task, you will install and configure Git and Visual Studio Code, includi
     > **Note**: To change the current Terminal shell to **PowerShell** click the drop-down list at the top right corner of the **TERMINAL** pane and click **Select Default Shell**. At the top of the Visual Studio Code window select your preferred terminal shell **Windows PowerShell** and click the plus sign on the right-hand side of the drop-down list to open a new terminal with the selected default shell.
 
 1. In the **TERMINAL** pane, run the following command below to configure the credential helper.
-
+    > **Do this step if you are using a Windows OS system. If you are using anyother OS move to next step(5)**
     ```git
     git config --global credential.helper wincred
     ```
@@ -89,8 +91,8 @@ In this task, you will install and configure Git and Visual Studio Code, includi
 1. In the **TERMINAL** pane, run the following commands to configure a user name and email for Git commits (replace the placeholders in braces with your preferred user name and email eliminating the < and > symbols):
 
     ```git
-    git config --global user.name "<John Doe>"
-    git config --global user.email <johndoe@example.com>
+    git config --global user.name "<6+2>"
+    git config --global user.email <6+2@mail.uc.edu>
     ```
 
 ### Exercise 1: Clone an existing repository
@@ -127,11 +129,18 @@ In this task, you will step through the process of cloning a Git repository by u
     > **Note**: To see all relevant commands, you can start by typing **Git**.
 
 7. In the **Provide repository URL or pick a repository source** text box, paste the repo clone URL you copied earlier in this task and press the **Enter** key.
-8. Within the **Select Folder** dialog box, navigate to the C: drive, create a new folder named **Git**, select it, and then click **Select Repository Location**.
+8. Within the **Select Folder** dialog box, navigate to your desired location, create a new folder named **Git**, select it, and then click **Select Repository Location**.
 9. When prompted, log in to your Azure DevOps account.
+    >**If you are not able to see any promt to login to your UC email and VS code is directly asking for password follow the following steps**
+    ![VS Code Password](images/vscode-passwd.png)
+    **Go back to protal and click Generate Git Credentials**
+    ![Generate Git Credentails](images/generate-creds.png)
+    **Copy the password and enter it in the VS Code and hit Enter.**
 10. After the cloning process completes, once prompted, in the Visual Studio Code, click **Open** to open the cloned repository.
 
     > **Note**: You can ignore warnings you might receive regarding problems with loading of the project. The solution may not be in the state suitable for a build, but we're going to focus on working with Git, so building the project is not required.
+
+>**[Screenshot 2]**: Show the cloned repository in VS Code.
 
 ### Exercise 2: Save work with commits
 
@@ -168,7 +177,7 @@ In this task, you will use Visual Studio Code to commit changes.
 
     > **Note**: We will discuss **staging** later in the lab.
 
-1. In the lower left corner of the Visual Studio Code window, to the right of the **main** label, note the **Synchronize Changes** icon of a circle with two vertical arrows pointing in the opposite directions and the number **1** next to the arrow pointing up. Click the icon and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/main**.
+1. Once committed, to the right of the **main** label, note the **Synchronize Changes** icon of a circle with two vertical arrows pointing in the opposite directions and the number **1** next to the arrow pointing up. Click the icon and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/main**.
 
 #### Task 2: Review commits
 
@@ -179,6 +188,7 @@ In this task, you will use the Azure DevOps portal to review commits.
 1. Verify that your commit appears at the top of list.
 
     ![ADO Repo Commits](images/ado-commit.png)
+>**[Screenshot 3]**: Show the commits page displaying your new commit as shown above.
 
 #### Task 3: Stage changes
 
@@ -187,9 +197,9 @@ In this task, you will explore the use of staging changes by using Visual Studio
 1. Switch back to the **Visual Studio Code** window.
 1. Update the open **Program.cs** class by changing the first comment with the following, and saving the file.
 
-```csharp
+    ```csharp
     //My second change
-```
+    ```
 
 1. In the Visual Studio Code window, switch back the **EXPLORER** tab, navigate to the **/eShopOnWeb/src/Web/Constants.cs** file and select it. This will automatically display its content in the details pane.
 1. Add to the **Constants.cs** file a comment on the first line and save the file.
@@ -207,10 +217,10 @@ In this task, you will explore the use of staging changes by using Visual Studio
     ![Staged changes](images/staged-changes.png)
 
 1. At the top of the **SOURCE CONTROL** tab, click the ellipsis symbol, in the drop-down menu, select **Commit** and, in the cascading menu, select **Commit Staged**.
-1. In the lower left corner of the Visual Studio Code window, click the **Synchronize Changes** button to synchronize the committed changes with the server and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/main**.
+1. Then click the **Synchronize Changes** button to synchronize the committed changes with the server and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/main**.
 
     > **Note**: Note that since only the staged change was committed, the other change is still pending to be synchronized.
-
+>**[Screenshot 4]**: Show the commits page displaying your new Added Comments commit as shown above.
 ### Exercise 3: Review history
 
 In this exercise, you will use the Azure DevOps portal to review history of commits.
@@ -228,6 +238,7 @@ In this task, you will step through commit history by using the Azure DevOps por
     ![File comparison](images/file-comparison.png)
 
     > **Note**: A comparison view is opened to enable you to easily locate the changes you've made. In this case, it's just the one comment.
+>**[Screenshot 5]**: Show the differnece between non-staged version and comitted version as showm above.
 
 1. Switch to the web browser window displaying the **Commits** pane of the **Azure DevOps** portal to review the source branches and merges. These provide a convenient way to visualize when and how changes were made to the source.
 1. Scroll down to the **My commit** entry (pushed before) and hover the mouse pointer over it to reveal the ellipsis symbol on the right side.
@@ -251,7 +262,7 @@ In this task, you will create a branch by using Visual Studio Code.
 
 1. Switch to **Visual Studio Code** running on your lab computer.
 1. With the **SOURCE CONTROL** tab selected, in the lower left corner of the Visual Studio Code window, click **main**.
-1. In the pop-up window, select **+ Create new branch from...**.
+1. In the pop-up window, select **+ Create new branch from...** and Click **HEAD**.
 
     ![Create branch](images/create-branch.png)
 
@@ -268,6 +279,7 @@ Git keeps track of which branch you are working on and makes sure that, when you
 
 1. In the **Visual Studio Code** window, with the **SOURCE CONTROL** tab selected, in the lower left corner of the Visual Studio Code window, click the **Publish changes** icon (directly to the right of the **dev** label representing your newly created branch).
 1. Switch to the web browser window displaying the **Commits** pane of the **Azure DevOps** portal and select **Branches**.
+>**[Screenshot 6]**: Show the new branch dev in portal.
 1. On the **Mine** tab of the **Branches** pane, verify that the list of branches includes **dev**.
 1. Hover the mouse pointer over the **dev** branch entry to reveal the ellipsis symbol on the right side.
 1. Click the ellipsis, in the pop-up menu, select **Delete branch**, and, when prompted for confirmation, click **Delete**.
@@ -343,6 +355,7 @@ In this task, you will use the Azure DevOps portal to test the policy and create
 1. Click on **Commit > Commit**. You will see a warning: changes to the main branch can only be done using a Pull Request.
 
     ![Policy denied commit](images/policy-denied.png)
+>**[Screenshot 7]**: Show the error message as above.   
 
 1. Click on **Cancel** to skip the commit.
 
@@ -371,6 +384,7 @@ In this task, you will use the Azure DevOps portal to create a Pull Request, usi
 1. On the right side options, click on the **+** button next to **Work Items**. Link the previously created work item to the Pull Request by clicking on it. You will see one of the requirements changes  status.
 
     ![Link work item](images/link-wit.png)
+>**[Screenshot 8]**: Show the pull request smilar to above screenshot.   
 
 1. Next,  open the **Files** tab to review the proposed changes. In a more complete Pull Request,  you would be able to review files one by one (marked as reviewed) and open comments for lines that may not be clear (hovering the mouse over the line number gives you an option to post a comment).
 1. Go back to the **Overview** tab, and on the top-right click on **Approve**. All the requirements will change to green. Now you can click on **Complete**.
@@ -380,6 +394,7 @@ In this task, you will use the Azure DevOps portal to create a Pull Request, usi
         - Check **Complete associated work item...**. It will move associated PBI to **Done** state.
     
 2. Click on **Complete Merge**
+>**[Screenshot 9]**: Show the pull request smilar to above screenshot.  
         
 #### Task 7: Applying tags
 
@@ -390,7 +405,7 @@ The product team has decided that the current version of the site should be rele
 1. In the **Create a tag** panel, in the **Name** text box, type **v1.1.0-beta**, in the **Based on** drop-down list leave the **main** entry selected, in the **Description** text box, type **Beta release v1.1.0** and click **Create**.
 
     > **Note**: You have now tagged the repository at this release (the latest commit gets linked to the tag). You could tag commits for a variety of reasons and Azure DevOps offers the flexibility to edit and delete them, as well as manage their permissions.
-
+>**[Screenshot 10]**: Show the created tag.  
 ## Review
 
 In this lab, you used the Azure DevOps portal to manage branches and repositories.
