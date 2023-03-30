@@ -70,7 +70,7 @@ In this task you will import the eShopOnWeb Git repository that will be used by 
     - **.github** folder container YAML GitHub workflow definitions.
     - **src** folder contains the .NET 6 website used on the lab scenarios.
 
->**[Screenshot 1]**: Show the imported repository.
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the imported repository.
 
 #### Task 3: Configure Git and Visual Studio Code
 
@@ -140,7 +140,7 @@ In this task, you will step through the process of cloning a Git repository by u
 
     > **Note**: You can ignore warnings you might receive regarding problems with loading of the project. The solution may not be in the state suitable for a build, but we're going to focus on working with Git, so building the project is not required.
 
->**[Screenshot 2]**: Show the cloned repository in VS Code.
+    >**[Screenshot 2 (https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)]**: Show the cloned repository in VS Code.
 
 ### Exercise 2: Save work with commits
 
@@ -188,7 +188,7 @@ In this task, you will use the Azure DevOps portal to review commits.
 1. Verify that your commit appears at the top of list.
 
     ![ADO Repo Commits](images/ado-commit.png)
->**[Screenshot 3]**: Show the commits page displaying your new commit as shown above.
+    >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the commits page displaying your new commit as shown above.
 
 #### Task 3: Stage changes
 
@@ -220,7 +220,7 @@ In this task, you will explore the use of staging changes by using Visual Studio
 1. Then click the **Synchronize Changes** button to synchronize the committed changes with the server and, if prompted, whether to proceed, click **OK** to push and pull commits to and from **origin/main**.
 
     > **Note**: Note that since only the staged change was committed, the other change is still pending to be synchronized.
->**[Screenshot 4]**: Show the commits page displaying your new Added Comments commit as shown above.
+    >**[Screenshot 4](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the commits page displaying your new Added Comments commit as shown above.
 ### Exercise 3: Review history
 
 In this exercise, you will use the Azure DevOps portal to review history of commits.
@@ -238,7 +238,7 @@ In this task, you will step through commit history by using the Azure DevOps por
     ![File comparison](images/file-comparison.png)
 
     > **Note**: A comparison view is opened to enable you to easily locate the changes you've made. In this case, it's just the one comment.
->**[Screenshot 5]**: Show the differnece between non-staged version and comitted version as showm above.
+    >**[Screenshot 5](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the differnece between non-staged version and comitted version as showm above.
 
 1. Switch to the web browser window displaying the **Commits** pane of the **Azure DevOps** portal to review the source branches and merges. These provide a convenient way to visualize when and how changes were made to the source.
 1. Scroll down to the **My commit** entry (pushed before) and hover the mouse pointer over it to reveal the ellipsis symbol on the right side.
@@ -279,7 +279,7 @@ Git keeps track of which branch you are working on and makes sure that, when you
 
 1. In the **Visual Studio Code** window, with the **SOURCE CONTROL** tab selected, in the lower left corner of the Visual Studio Code window, click the **Publish changes** icon (directly to the right of the **dev** label representing your newly created branch).
 1. Switch to the web browser window displaying the **Commits** pane of the **Azure DevOps** portal and select **Branches**.
->**[Screenshot 6]**: Show the new branch dev in portal.
+    >**[Screenshot 6](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the new branch dev in portal.
 1. On the **Mine** tab of the **Branches** pane, verify that the list of branches includes **dev**.
 1. Hover the mouse pointer over the **dev** branch entry to reveal the ellipsis symbol on the right side.
 1. Click the ellipsis, in the pop-up menu, select **Delete branch**, and, when prompted for confirmation, click **Delete**.
@@ -355,7 +355,7 @@ In this task, you will use the Azure DevOps portal to test the policy and create
 1. Click on **Commit > Commit**. You will see a warning: changes to the main branch can only be done using a Pull Request.
 
     ![Policy denied commit](images/policy-denied.png)
->**[Screenshot 7]**: Show the error message as above.   
+    >**[Screenshot 7](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the error message as above.   
 
 1. Click on **Cancel** to skip the commit.
 
@@ -384,7 +384,7 @@ In this task, you will use the Azure DevOps portal to create a Pull Request, usi
 1. On the right side options, click on the **+** button next to **Work Items**. Link the previously created work item to the Pull Request by clicking on it. You will see one of the requirements changes  status.
 
     ![Link work item](images/link-wit.png)
->**[Screenshot 8]**: Show the pull request smilar to above screenshot.   
+    >**[Screenshot 8](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the pull request smilar to above screenshot.   
 
 1. Next,  open the **Files** tab to review the proposed changes. In a more complete Pull Request,  you would be able to review files one by one (marked as reviewed) and open comments for lines that may not be clear (hovering the mouse over the line number gives you an option to post a comment).
 1. Go back to the **Overview** tab, and on the top-right click on **Approve**. All the requirements will change to green. Now you can click on **Complete**.
@@ -394,7 +394,7 @@ In this task, you will use the Azure DevOps portal to create a Pull Request, usi
         - Check **Complete associated work item...**. It will move associated PBI to **Done** state.
     
 2. Click on **Complete Merge**
->**[Screenshot 9]**: Show the pull request smilar to above screenshot.  
+    >**[Screenshot 9](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M02_L02_Version_Controlling_with_Git_in_Azure_Repos.md)**: Show the pull request smilar to above screenshot.  
         
 #### Task 7: Applying tags
 
