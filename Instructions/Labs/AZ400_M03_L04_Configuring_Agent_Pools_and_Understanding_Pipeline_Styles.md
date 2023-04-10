@@ -58,7 +58,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1. On the **Create New Project** page, click **Navigate to project**.
 
-    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L04_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)**: Show the newly created organization along with your name or <6+2> visible.
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L04_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)**: Show the newly created organization along with your name or <6+2> visible on top.
 
 ### Exercise 1: Author YAML-based Azure Pipelines
 
@@ -107,7 +107,7 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
 
     > **Note**: If you receive an error message at this point indicating that the current system settings prevent you from downloading the file, in the Internet Explorer window, in the upper right corner, click the gearwheel symbol designating the **Settings** menu header, in the dropdown menu, select **Internet Options**, in the **Internet Options** dialog box, click **Advanced**, on the **Advanced** tab, click **Reset**, in the **Reset Internet Explorer Settings** dialog box, click **Reset** again, click **Close**, and try the download again.
 
-    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent.
+    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent. For mac before you open Terminal to follow steps navigate to **Settings-> Developer Tools -> turn on the Terminal** to use the terminal for setting up the agent.
 
 1. Start Windows PowerShell as administrator and in the **Administrator: Windows PowerShell** console run the following lines to create the **C:\\agent** directory and extract the content of the downloaded archive into it.
 
@@ -119,7 +119,7 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
     [System.IO.Compression.ZipFile]::ExtractToDirectory($TARGET, "$PWD")
     ```
 
-    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent.
+    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent. For mac before you open Terminal to follow steps navigate to **Settings-> Developer Tools -> turn on the Terminal** to use the terminal for setting up the agent.
 
 1. In the same **Administrator: Windows PowerShell** console, run the following to configure the agent:
 
@@ -127,7 +127,7 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
     .\config.cmd
     ```
 
-    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent.
+    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent. For mac before you open Terminal to follow steps navigate to **Settings-> Developer Tools -> turn on the Terminal** to use the terminal for setting up the agent.
 
 1. When prompted, specify the values of the following settings:
 
@@ -147,18 +147,22 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
 
     > **Note**: You can run self-hosted agent as either a service or an interactive process. You might want to start with the interactive mode, since this simplifies verifying agent functionality. For production use, you should consider either running the agent as a service or as an interactive process with auto-logon enabled, since both persist their running state and ensure that the agent starts automatically if the operating system is restarted.
 
+     > **Note**: You need to complete the ./run.sh command as directed in the browser to complete the steps.
+
 1. Switch to the browser window displaying the Azure DevOps portal and close the **Get the agent** pane.
 1. Back on the **Agents** tab of the **az400m05l05a-pool** pane, note that the newly configured agent is listed with the **Online** status.
+
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L04_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)**: Show the newly added agent with your name or <6+2> visible on top.
+
 1. In the web browser window displaying the Azure DevOps portal, in the upper left corner, click the **Azure DevOps** label.
 1. In the browser window displaying the list of projects, click the tile representing your **Configuring Agent Pools and Understanding Pipeline Styles** project.
 1. On the **Configuring Agent Pools and Understanding Pipeline Styles** pane, in the vertical navigational pane on the left side, in the **Pipelines** section, click **Pipelines**.
 1. On the **Recent** tab of the **Pipelines** pane, select **PartsUnlimited** and, on the **PartsUnlimited** pane, select **Edit**.
 1. On the **PartsUnlimited** edit pane, in the existing YAML-based pipeline, replace line  `vmImage: windows-2019` designating the target agent pool the following content, designating the newly created self-hosted agent pool:
 
+
     ```yaml
     name: az400m05l05a-pool
-    demands:
-    - agent.name -equals az400m05-vm0
     ```
     > **WARNING**: Be careful with copy/paste, make sure you have same indentation shown above.
 
@@ -166,7 +170,11 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
 1. For `Task: NugetToolInstaller@0`, click on **Settings (link that is displaying above the task in grey colour)**, modify **Version of NuGet.exe to install** > **4.0.0**  and click on **Add**.
 1.  On the **PartsUnlimited** edit pane, in the upper right corner of the pane, click **Save** and, on the **Save** pane, click **Save** again. This will automatically trigger the build based on this pipeline.
 1.  In the Azure DevOps portal, in the vertical navigational pane on the left side, in the **Pipelines** section, click **Pipelines**.
-1.  On the **Recent** tab of the **Pipelines** pane, click the **PartsUnlimited** entry, on the **Runs** tab of the **PartsUnlimited** pane, select the most recent run, on the **Summary** pane of the run, scroll down to the bottom, in the **Jobs** section, click **Phase 1** and monitor the job until its successful completion.
+1.  On the **Recent** tab of the **Pipelines** pane, click the **PartsUnlimited** entry, on the **Runs** tab of the **PartsUnlimited** pane, select the most recent run, on the **Summary** pane of the run, scroll down to the bottom, in the **Jobs** section, click **Jobs/Phase 1** and monitor the job until its successful completion.
+
+    > **WARNING**: For Mac users you will see an error in VSBuild while monitoring the job as your system is not compatable to complete the pipeline take a screenshot showing the error with your name or <6+2> Visible on top.
+
+     >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L04_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)**: For Windows users show all jobs successfull / For Mac users show the error in VSBuils along with your name or <6+2> visible on top.
 
 
 
