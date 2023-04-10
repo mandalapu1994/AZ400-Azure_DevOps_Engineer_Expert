@@ -58,7 +58,7 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
 
 1. On the **Create New Project** page, click **Navigate to project**.
 
-    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L04_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)**: Show the newly created organization along with your name or <6+2> visible on top.
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L04_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)**: Show the newly created project along with your name or <6+2> visible on top.
 
 ### Exercise 1: Author YAML-based Azure Pipelines
 
