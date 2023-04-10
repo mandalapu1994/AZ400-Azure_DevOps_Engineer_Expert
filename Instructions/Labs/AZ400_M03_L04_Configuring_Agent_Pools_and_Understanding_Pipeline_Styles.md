@@ -12,11 +12,10 @@ lab:
 
 - This lab requires **Microsoft Edge** or an [Azure DevOps supported browser.](https://docs.microsoft.com/en-us/azure/devops/server/compatibility?view=azure-devops#web-portal-supported-browsers)
 
-- **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+- [Git for Windows download page](https://gitforwindows.org/).
+- [Git for Mac download instructions page](https://git-scm.com/download/mac).
 
-- [Git for Windows download page](https://gitforwindows.org/). This will be installed as part of prerequisites for this lab.
-
-- [Visual Studio Code](https://code.visualstudio.com/). This will be installed as part of prerequisites for this lab.
+- [Visual Studio Code](https://code.visualstudio.com/).
 
 ## Lab overview
 
@@ -58,6 +57,8 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
 1. On the **Create New Project** page, click **Navigate to project**.
+
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L04_Configuring_Agent_Pools_and_Understanding_Pipeline_Styles.md)**: Show the newly created organization along with your name or <6+2> visible.
 
 ### Exercise 1: Author YAML-based Azure Pipelines
 
@@ -102,9 +103,11 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
 1. On the **Add agent pool** pane, in the **Pool type** dropdown list, select **Self-hosted**, in the **Name** text box, type **az400m05l05a-pool** and then click **Create**.
 1. Back on the **Agent pools** pane, click the entry representing the newly created **az400m05l05a-pool**.
 1. On the **Jobs** tab of the **az400m05l05a-pool** pane, click the **New agent** button.
-1. On the **Get the agent** pane, ensure that the **Windows** and **x64** tabs are selected, and click **Download** to download the zip archive containing the agent binaries to download it into the local **Downloads** folder within your user profile.
+1. On the **Get the agent** pane, Select your operating machine for this case we will go with **Windows** and **x64** tabs, and click **Download** to download the zip archive containing the agent binaries to download it into the local **Downloads** folder within your user profile.
 
     > **Note**: If you receive an error message at this point indicating that the current system settings prevent you from downloading the file, in the Internet Explorer window, in the upper right corner, click the gearwheel symbol designating the **Settings** menu header, in the dropdown menu, select **Internet Options**, in the **Internet Options** dialog box, click **Advanced**, on the **Advanced** tab, click **Reset**, in the **Reset Internet Explorer Settings** dialog box, click **Reset** again, click **Close**, and try the download again.
+
+    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent.
 
 1. Start Windows PowerShell as administrator and in the **Administrator: Windows PowerShell** console run the following lines to create the **C:\\agent** directory and extract the content of the downloaded archive into it.
 
@@ -116,11 +119,15 @@ In this task, you will configure the LOD VM as an Azure DevOps self-hosting agen
     [System.IO.Compression.ZipFile]::ExtractToDirectory($TARGET, "$PWD")
     ```
 
+    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent.
+
 1. In the same **Administrator: Windows PowerShell** console, run the following to configure the agent:
 
     ```powershell
     .\config.cmd
     ```
+
+    > **Note**: These instructions are given for Windows if you have system with any other operating system please follow the on screen instructions to install the agent.
 
 1. When prompted, specify the values of the following settings:
 
