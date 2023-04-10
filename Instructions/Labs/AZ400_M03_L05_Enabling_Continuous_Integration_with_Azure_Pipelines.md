@@ -109,7 +109,7 @@ In this task, you will create and configure a build pipeline by using a predefin
 
 1. In the **Run pipeline** pane, accept the default options and click **Save and run**. This will automatically display the **Summary** tab of the pipeline run job, with the **Queued** status.
 
-    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L05_Enabling_Continuous_Integration_with_Azure_Pipelines.md)**: Show the run success status for newly created pipeline with your name or <6+2> visible on top.
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L05_Enabling_Continuous_Integration_with_Azure_Pipelines.md)**: Show the pipeline run success status for newly created pipeline with your name or <6+2> visible on top.
 
 #### Task 2: Tracking and reviewing a build
 
@@ -145,7 +145,7 @@ In this task, you will trigger a continuous integration build.
 1. On the **Pipelines** pane, verify that it contains the entry representing a new build (note that its number contains the trailing **.2**) which was triggered by your change.
 1. Click the build entry to display its details and verify that it completed successfully.
 
-    >**[Screenshot 4](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L05_Enabling_Continuous_Integration_with_Azure_Pipelines.md)**: Show the run success status after the changes have been made in the repository with your name or <6+2> visible on top.
+    >**[Screenshot 4](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L05_Enabling_Continuous_Integration_with_Azure_Pipelines.md)**: Show the pipeline run success status after the changes have been made in the repository with your name or <6+2> visible on top.
 
 ## Review
 

@@ -93,6 +93,8 @@ In this task, you will configure the Azure Pipelines project based on the fork o
 
 1. On the **Summary** tab of the build job's pane, verify that the build completed successfully.
 
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the pipeline run success status with your name or <6+2> visible on top.
+
 #### Task 3: Modifying a YAML build pipeline definition
 
 In this task, you will modify the YAML build definition in the forked GitHub repository and track the build process triggered by your modification.
@@ -122,6 +124,8 @@ In this task, you will modify the YAML build definition in the forked GitHub rep
 1. Switch back to the browser tab displaying the **Azure DevOps** portal and use the breadcrumb navigation to navigate to the **Pipelines** pane of the **Pipelines** view.
 1. Verify that the new build triggered by the update already appears on the **Recent** tab in the **Recently run pipelines** list. Click the entry corresponding to the pipeline, on the **Runs** tab, select the most recent run, and, in the **Jobs** section, click the **Job** entry.
 1. On the pane displaying job details, click on individual tasks of the job and follow it through to completion.
+
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the pipeline run success status after the newly commited ch with your name or <6+2> visible on top.
 
 #### Task 4: Proposing a change via GitHub pull request
 
@@ -196,6 +200,8 @@ In this task, you will add a build status badge to your GitHub repo.
 1. Scroll to the bottom of the page, replace the default commit message with **Add an Azure Pipelines status badge**, and click **Commit changes**.
 
     > **Note**: You now have a dynamic build status badge on your project's front page that allows everyone to know that you're effectively managing your project.
+
+     >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the pipeline run success status in the github readme.md file with your repository name visible on top.
 
 ## Review
 
