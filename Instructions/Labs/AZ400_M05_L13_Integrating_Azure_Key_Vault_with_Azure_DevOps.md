@@ -83,11 +83,17 @@ You will need a Service Principal to deploy  Azure resources from Azure Pipeline
 
 A Service Principal is automatically created by Azure Pipelines, when you connect to an Azure subscription from inside a pipeline definition or when you create a new Service Connection from the project settings page (automatic option). You can also manually create the Service Principal from the portal or using Azure CLI and re-use it across projects.
 
-1.  From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
+1.  From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with UC credentials.
 1.  In the Azure portal, click on the **Cloud Shell** icon, located directly to the right of the search textbox at the top of the page.
 1.  If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-   >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
+1. Select Advanced Settings and configure the powershell with following settings.
+
+    | Field | Value |
+    | --- | --- |
+    | Cloud Shell region| **East US** |
+    | Resource group | **az400m04l09-RG-<6+2>** |
+    | Storage Account | **<6+2>sadev** |
 
 1.  From the **Bash** prompt, in the **Cloud Shell** pane, run the following commands to retrieve the values of the Azure subscription ID and subscription name attributes:
 
