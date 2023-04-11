@@ -10,6 +10,8 @@ lab:
 
 ## Lab requirements
 
+- **Replace with your UC 6+2 in my case mandalrt when ever you see <6+2> in in the lab ins**
+
 - This lab requires **Microsoft Edge** or an [Azure DevOps supported browser.](https://docs.microsoft.com/en-us/azure/devops/server/compatibility?view=azure-devops#web-portal-supported-browsers)
 
 - **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
@@ -112,22 +114,29 @@ In this task, you will create two Azure web apps representing the **Canary** and
 1. In the Azure portal, click the **Cloud Shell** icon, located directly to the right of the search textbox at the top of the page.
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
+1. Select Advanced Settings and configure the powershell with following settings.
+
+    | Field | Value |
+    | --- | --- |
+    | Cloud Shell region| **East US** |
+    | Resource group | **az400m04l09-RG-<6+2>** |
+    | Storage Account | **<6+2>sadev** |
+    | File Share | **<6+2>fsdev** | 
 
 1. From the **Bash** prompt, in the **Cloud Shell** pane, run the following command to create a resource group (replace the `<region>` variable placeholder with the name of the Azure region that will host the two Azure web apps, for example 'westeurope' or 'centralus' or any other available region of your choice):
 
     > **Note**: possible locations can be found by running the following command, use the **Name** on `<region>` : `az account list-locations -o table`
 
     ```bash
-    REGION='centralus'
-    RESOURCEGROUPNAME='az400m04l09-RG'
+    REGION='eastus'
+    RESOURCEGROUPNAME='az400m04l09-RG-<6+2>'
     az group create -n $RESOURCEGROUPNAME -l $REGION
     ```
 
 1. To create an App service plan
 
     ```bash
-    SERVICEPLANNAME='az400m04l09-sp1'
+    SERVICEPLANNAME='az400m04l09-sp1-<6+2>'
     az appservice plan create -g $RESOURCEGROUPNAME -n $SERVICEPLANNAME --sku S1
     ```
 
@@ -151,7 +160,7 @@ In this task, you will create two Azure web apps representing the **Canary** and
 
     | Setting | Value |
     | --- | --- |
-    | Resource group | **az400m04l09-RG** |
+    | Resource group | **az400m04l09-RG-<6+2>** |
     | Name | the name of the Canary web app you recorded in the previous task |
     | Region | the same Azure region to which you deployed the web apps earlier in the previous task |
     | Resource Mode | **Classic** |
@@ -160,7 +169,7 @@ In this task, you will create two Azure web apps representing the **Canary** and
 
 1. Click **Review + create** and then click **Create**.
 1. Wait for the provisioning process to complete.
-1. In the Azure portal, navigate to the resource group **az400m04l09-RG** you created in the previous task.
+1. In the Azure portal, navigate to the resource group **az400m04l09-RG-<6+2>** you created in the previous task.
 1. In the list of resources, click the **Canary** web app.
 1. On the **Canary** web app page, in the vertical menu on the left, in the **Settings** section, click **Application Insights**.
 1. On the **Application Insights** blade, click **Turn on Application Insights**.
@@ -223,7 +232,7 @@ In this task, you will set up the release tasks as part of the Release Pipeline.
 1. Select the Task **Deploy Azure App Service**. In the **Package or Folder** field, update the default value of "$(System.DefaultWorkingDirectory)/\*\*/\*.zip" to "$(System.DefaultWorkingDirectory)/\*\*/Web.zip" 
 1. On the **All pipelines > New Release Pipeline** pane, click **Save** and, in the **Save** dialog box, click **OK**.
 
-You have now successfully configured the Release Pipeline.
+    > **You have now successfully configured the Release Pipeline**:.
 
 1. In the browser window displaying the **eShopOnWeb** project, in the vertical navigational pane, in the **Pipelines** section, click **Pipelines**.
 1. On the **Pipelines** pane, click the entry representing **eShopOnWeb** build pipeline and then, on the **eShopOnWeb** pane, click on **Run Pipeline**.
@@ -233,8 +242,17 @@ You have now successfully configured the Release Pipeline.
 
 1. In the vertical navigational pane, in the **Pipelines** section, click **Releases** and, on the **eShopOnWeb** pane, click the entry representing the most recent release.
 1. On the **eShopOnWeb > Release-1** blade, track the progress of the release and verify that the deployment to both web apps completed successfully.
-1. Switch to the Azure portal interface, navigate to the resource group **az400m04l09-RG**, in the list of resources, click the **Canary** web app, on the web app blade, click **Browse**, and verify that the web page (E-commerce website) loads successfully in a new web browser tab.
-1. Switch back to the Azure portal interface, this time navigating  to the resource group **az400m04l09-RG**, in the list of resources, click the **Production** web app, on the web app blade, click **Browse**, and verify that the web page loads successfully in a new web browser tab.
+
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the Release success status for both canary and production with your name or <6+2> visible on top.
+
+1. Switch to the Azure portal interface, navigate to the resource group **az400m04l09-RG-<6+2>**, in the list of resources, click the **Canary** web app, on the web app blade, click **Browse**, and verify that the web page (E-commerce website) loads successfully in a new web browser tab.
+
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the webpage deployed in canary along with url
+
+1. Switch back to the Azure portal interface, this time navigating  to the resource group **az400m04l09-RG-<6+2>**, in the list of resources, click the **Production** web app, on the web app blade, click **Browse**, and verify that the web page loads successfully in a new web browser tab.
+
+    >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the webpage deployed in production along with url
+
 1. Close the web browser tab displaying the **EShopOnWeb** web site.
 
     > **Note**: Now you have the application with CI/CD configured. In the next exercise we will set up Quality Gates as part of a more advanced  Release pipeline.
@@ -264,7 +282,7 @@ In this task, you will enable the post-deployment gate for the Canary Environmen
 
 1.  Back on the **All pipelines > New Release Pipeline** pane, on the right edge of the rectangle representing the **Canary Environment** stage, click the oval shape representing the **Post-deployment conditions**.
 1.  On **Post-deployment conditions** pane, set the **Gates** slider to **Enabled**, click **+ Add**, and, in the pop-up menu, click **Query Azure Monitor Alerts**.
-1.  On **Post-deployment conditions** pane, in the **Query Azure Monitor Alerts** section, in the **Azure subscription** dropdown list, select the **service connection** entry representing the connection to your Azure subscription, and, in the **Resource group** dropdown list, select the **az400m04l09-RG** entry.
+1.  On **Post-deployment conditions** pane, in the **Query Azure Monitor Alerts** section, in the **Azure subscription** dropdown list, select the **service connection** entry representing the connection to your Azure subscription, and, in the **Resource group** dropdown list, select the **az400m04l09-RG-<6+2>** entry.
 1. On the **Post-deployment conditions** pane, expand the **Advanced** section and configure the following options:
 
 - Filter type: **None**
@@ -313,30 +331,7 @@ In this task, you will first generate some alerts for the Canary Web App, follow
 
 1. Wait another 3 minutes and validate the status of the Release Gates again. As it is now +8 minutes after the initial Release Gates got checked, and it's been more than 8 minutes since the initial Application Insight Alert got triggered with action "Fired", it should result in a successful Release Gate, having allowed the deployment of the Production Release Stage as well.
 
-### Exercise 6: Remove the Azure lab resources
-
-In this exercise, you will remove the Azure resources provisioned in this lab to eliminate unexpected charges.
-
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisione in this lab to eliminate unnecessary charges.
-
-1. In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1. List all resource groups created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m04l09-RG')].name" --output tsv
-    ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m04l09-RG')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+     >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the Release success status for both canary and production with your name or <6+2> visible on top.
 
 ## Review
 
