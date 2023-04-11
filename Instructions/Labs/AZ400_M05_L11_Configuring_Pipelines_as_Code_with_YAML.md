@@ -36,7 +36,7 @@ After you complete this lab, you will be able to:
 
 In this exercise, you will set up the prerequisites for the lab, which consist of a new Azure DevOps project with a repository based on the [eShopOnWeb](https://github.com/MicrosoftLearning/eShopOnWeb).
 
-#### Task 1:  (skip if done) Create and configure the team project
+#### Task 1: Create and configure the team project
 
 In this task, you will create an **eShopOnWeb_MultiStageYAML** Azure DevOps project to be used by several labs.
 
@@ -44,7 +44,7 @@ In this task, you will create an **eShopOnWeb_MultiStageYAML** Azure DevOps proj
 
     ![Create Project](images/create-project.png)
 
-#### Task 2:  (skip if done) Import eShopOnWeb Git Repository
+#### Task 2 Import eShopOnWeb Git Repository
 
 In this task you will import the eShopOnWeb Git repository that will be used by several labs.
 
@@ -63,33 +63,34 @@ In this task you will import the eShopOnWeb Git repository that will be used by 
 
 In this task, you will create an Azure web app by using the Azure portal.
 
-1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
+1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with UC credentials.
 1. In the Azure portal, in the toolbar, click the **Cloud Shell** icon located directly to the right of the search text box.
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
-    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**.
+1. Select Advanced Settings and configure the powershell with following settings.
 
-    > **Note:** for a list of regions and their alias, run the following command from the Azure Cloud Shell - Bash:
-
-    ```bash
-    az account list-locations -o table
-    ```
+    | Field | Value |
+    | --- | --- |
+    | Cloud Shell region| **East US** |
+    | Resource group | **az400m05l11-RG-<6+2>** |
+    | Storage Account | **<6+2>sadev** |
+    | File Share | **<6+2>fsdev** |
 
 1. From the **Bash** prompt, in the **Cloud Shell** pane, run the following command to create a resource group (replace the `<region>` placeholder with the name of the Azure region closest to you such as 'centralus', 'westeurope' or other region of choice).
 
     ```bash
-    LOCATION='<region>'
+    LOCATION='eastus'
     ```
 
     ```bash
-    RESOURCEGROUPNAME='az400m05l11-RG'
+    RESOURCEGROUPNAME='az400m05l11-RG-<6+2>'
     az group create --name $RESOURCEGROUPNAME --location $LOCATION
     ```
 
 1. To create a Windows App service plan by running the following command:
 
     ```bash
-    SERVICEPLANNAME='az400m05l11-sp1'
+    SERVICEPLANNAME='az400m05l11-sp1-<6+2>'
     az appservice plan create --resource-group $RESOURCEGROUPNAME --name $SERVICEPLANNAME --sku B3
     ```
 
@@ -311,6 +312,8 @@ stages:
 1. On the Azure web app blade, click **Overview** and, on the overview blade, click **Browse** to open your site in a new web browser tab.
 1. Verify that the deployed site loads as expected in the new browser tab, showing the EShopOnWeb E-commerce website.
 
+  >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M05_L11_Configuring_Pipelines_as_Code_with_YAML.md)**: Show the webpage deployed in canary along with url
+
 ### Exercise 2: Configure Environment settings for CI/CD Pipelines as Code with YAML in Azure DevOps
 
 In this exercise, you will add approvals to a YAML-based Pipeline in Azure DevOps.
@@ -401,35 +404,13 @@ the resulting YAML snippet should look like this now, reflecting the **Deploy St
 1. This is visible from the Pipeline view, where it says **Waiting (0/1 checks passed)**. A notification message is also displayed saying **approval needs review before this run can continue to Deploy to an Azure Web App**.
 1. Click the **View** button next to this message.
 1. From the appearing pane **Checks and manual validations for Deploy to Azure Web App**, click the **Approval Waiting** message.
+
+  >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M05_L11_Configuring_Pipelines_as_Code_with_YAML.md)**: Show the approval request page along with your name or <6+2> visible in the top of the page.
+
 1. Click **Approve**.
 1. This allows the Deploy Stage to kick off and successfully deploying the Azure Web App source code.
 
     > **Note:** While this example only used the approvals, know the other checks such as Azure Monitor, REST API, etc... can be used in a similar way
-
-### Exercise 3: Remove the Azure lab resources
-
-In this exercise, you will remove the Azure resources provisioned in this lab to eliminate unexpected charges.
-
->**Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges.
-
-1. In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1. List all resource groups created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m05l11-RG')].name" --output tsv
-    ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'az400m05l11-RG')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
 
 ## Review
 
