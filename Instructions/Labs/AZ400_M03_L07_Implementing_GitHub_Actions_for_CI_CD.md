@@ -183,7 +183,7 @@ In this task, you will use GitHub environments to ask for manual approval before
 
     ![approval](images/gh-approve.png)
 
-     >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: take a similar screenshot with your name or <6+2> visible on top.
+     >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: take a similar screenshot with your name or <6+2> visible on top.
 
 1. Workflow will follow the **deploy** job execution and finish.
 

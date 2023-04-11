@@ -243,15 +243,15 @@ In this task, you will set up the release tasks as part of the Release Pipeline.
 1. In the vertical navigational pane, in the **Pipelines** section, click **Releases** and, on the **eShopOnWeb** pane, click the entry representing the most recent release.
 1. On the **eShopOnWeb > Release-1** blade, track the progress of the release and verify that the deployment to both web apps completed successfully.
 
-    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the Release success status for both canary and production with your name or <6+2> visible on top.
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M04_L09_Controlling_Deployments_using_Release_Gates.md)**: Show the Release success status for both canary and production with your name or <6+2> visible on top.
 
 1. Switch to the Azure portal interface, navigate to the resource group **az400m04l09-RG-<6+2>**, in the list of resources, click the **Canary** web app, on the web app blade, click **Browse**, and verify that the web page (E-commerce website) loads successfully in a new web browser tab.
 
-    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the webpage deployed in canary along with url
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M04_L09_Controlling_Deployments_using_Release_Gates.md)**: Show the webpage deployed in canary along with url
 
 1. Switch back to the Azure portal interface, this time navigating  to the resource group **az400m04l09-RG-<6+2>**, in the list of resources, click the **Production** web app, on the web app blade, click **Browse**, and verify that the web page loads successfully in a new web browser tab.
 
-    >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the webpage deployed in production along with url
+    >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M04_L09_Controlling_Deployments_using_Release_Gates.md)**: Show the webpage deployed in production along with url
 
 1. Close the web browser tab displaying the **EShopOnWeb** web site.
 
@@ -331,7 +331,7 @@ In this task, you will first generate some alerts for the Canary Web App, follow
 
 1. Wait another 3 minutes and validate the status of the Release Gates again. As it is now +8 minutes after the initial Release Gates got checked, and it's been more than 8 minutes since the initial Application Insight Alert got triggered with action "Fired", it should result in a successful Release Gate, having allowed the deployment of the Production Release Stage as well.
 
-     >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the Release success status for both canary and production with your name or <6+2> visible on top.
+     >**[Screenshot 4](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M04_L09_Controlling_Deployments_using_Release_Gates.md)**: Show the Release success status for both canary and production with your name or <6+2> visible on top.
 
 ## Review
 
