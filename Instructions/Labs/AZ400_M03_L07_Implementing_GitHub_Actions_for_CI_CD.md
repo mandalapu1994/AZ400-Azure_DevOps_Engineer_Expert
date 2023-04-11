@@ -12,9 +12,7 @@ lab:
 
 - This lab requires **Microsoft Edge** or an [Azure DevOps supported browser.](https://docs.microsoft.com/en-us/azure/devops/server/compatibility?view=azure-devops#web-portal-supported-browsers)
 
-- Identify an existing Azure subscription or create a new one.
-
-- Verify that you have a Microsoft account or an Azure AD account with the Contributor or the Owner role in the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/roles/manage-roles-portal#view-my-roles).
+- Identify an existing Azure subscription or create a new one. (University has provided you with a Azure Subscription - CECH_SOIT_Bootcamp)
 
 - **If you don't already have a GitHub account** that you can use for this lab, follow instructions available at [Signing up for a new GitHub account](https://github.com/join) to create one.
 
@@ -80,15 +78,26 @@ In this exercise, you will create an Azure Service Principal to authorize GitHub
 
 In this task, you will create the Azure Service Principal used by GitHub to deploy the desired resources. As an alternative, you could also use [OpenID connect in Azure](https://docs.github.com/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-azure), as a secretless authentication mechanism.
 
-1. On your lab computer, in a browser window, open the Azure Portal (https://portal.azure.com/).
+1. On your lab computer, in a browser window, open the Azure Portal (https://portal.azure.com/) and signin using your UC credentials to use UC assigned subscription.
 1. In the portal, look for **Resource Groups** and click on it.
 1. Click on **+ Create** to create a new Resource Group for the exercise.
-1. On the **Create a resource group** tab, give the following name to your Resource Group: **rg-az400-eshoponweb-NAME** (replace NAME for some unique alias). Click on **Review+Create > Create**.
+1. On the **Create a resource group** tab, give the following name to your Resource Group: **rg-az400-eshoponweb-<6+2>** (replace <6+2> with your 6+2 in my case it's mandalrt). Click on **Review+Create > Create**.
 1. In the Azure Portal, open the **Cloud Shell** (next to the search bar).
 
     > NOTE: if this is the first time you open the Cloud Shell, you need to configure the [persistent storage](https://learn.microsoft.com/en-us/azure/cloud-shell/persisting-shell-storage#create-new-storage)
 
-1. Make sure the terminal is running in **Bash** mode and execute the following command, replacing **SUBSCRIPTION-ID** and **RESOURCE-GROUP** with your own identifiers (both can be found on the **Overview** page of the Resorce Group):
+1. Make sure the terminal is running in **Bash** mode.
+
+1. Select Advanced Settings and configure the powershell with following settings.
+
+    | Field | Value |
+    | --- | --- |
+    | Cloud Shell region| **East US** |
+    | Resource group | **-> Use Existing -> Select the resource group you just created from the list** |
+    | Storage Account | **<6+2>sadev** |
+    | File Share | **<6+2>fsdev** | 
+
+1. Now, execute the following command, replacing **SUBSCRIPTION-ID** and **RESOURCE-GROUP** with your own identifiers (both can be found on the **Overview** page of the Resorce Group):
 
     `az ad sp create-for-rbac --name GH-Action-eshoponweb --role contributor --scopes /subscriptions/SUBSCRIPTION-ID/resourceGroups/RESOURCE-GROUP --sdk-auth`
 
@@ -124,9 +133,9 @@ In this task, you will modify the given GitHub workflow and execute it to deploy
 
 1. In the **env** section, make the following changes:
     - Replace **NAME** in **RESOURCE-GROUP** variable. It should be the same resource group created in previous steps.
-    - (Optional) You can choose your closest [azure region](https://azure.microsoft.com/en-gb/explore/global-infrastructure/geographies/#geographies) for **LOCATION**. For example, "eastus", "eastasia", "westus", etc.
+    - Choose **eastus** as your Location.
     - Replace **YOUR-SUBS-ID** in **SUBSCRIPTION-ID**.
-    - Replace **NAME** in **WEBAPP-NAME** with some unique alias. It will be used to create a globally unique website using Azure App Service.
+    - Replace **NAME** in **WEBAPP-NAME** with your <6+2>. It will be used to create a globally unique website using Azure App Service.
 
 1. Read the workflow carefully, comments are provided to help understand.
 
@@ -149,7 +158,9 @@ In this task, you will review the GitHub workflow execution:
 
     ![Browse WebApp](images/browse-webapp.png)
 
-#### (OPTIONAL) Task 4: Add manual approval pre-deploy using GitHub Environments
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: Show the overview of the webapp create with your name or <6+2> visible on top.
+
+#### Task 4: Add manual approval pre-deploy using GitHub Environments
 
 In this task, you will use GitHub environments to ask for manual approval before executing the actions defined on the deploy job of your workflow.
 
@@ -172,26 +183,9 @@ In this task, you will use GitHub environments to ask for manual approval before
 
     ![approval](images/gh-approve.png)
 
+     >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M03_L06_Integrating_External_Source_Control_with_Azure_Pipelines.md)**: take a similar screenshot with your name or <6+2> visible on top.
+
 1. Workflow will follow the **deploy** job execution and finish.
-
-### Exercise 2: Remove the Azure lab resources
-
-In this exercise, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges.
-
-1. In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1. List all resource groups created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'rg-az400-eshoponweb')].name" --output tsv
-    ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-    ```sh
-    az group list --query "[?starts_with(name,'rg-az400-eshoponweb')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-    ```
-
-    >**Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
 
 ## Review
 

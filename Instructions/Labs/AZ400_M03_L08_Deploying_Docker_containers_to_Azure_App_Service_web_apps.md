@@ -14,7 +14,7 @@ lab:
 
 - **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://learn.microsoft.com/azure/devops/organizations/accounts/create-organization?view=azure-devops).
 
-- Identify an existing Azure subscription or create a new one.
+- Identify an existing Azure subscription or create a new one. (University has provided you with a Azure Subscription - CECH_SOIT_Bootcamp)
 
 - Verify that you have a Microsoft account or an Azure AD account with the Contributor or the Owner role in the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://learn.microsoft.com/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://learn.microsoft.com/azure/active-directory/roles/manage-roles-portal).
 
@@ -44,7 +44,7 @@ In this task, you will create an **eShopOnWeb** Azure DevOps project to be used 
 
 1.  On your lab computer, in a browser window open your Azure DevOps organization. Click on **New Project**. Give your project the name **eShopOnWeb** and choose **Scrum** on the **Work Item process** dropdown. Click on **Create**.
 
-#### Task 2: (skip if done) Import eShopOnWeb Git Repository
+#### Task 2: Import eShopOnWeb Git Repository
 
 In this task you will import the eShopOnWeb Git repository that will be used by several labs.
 
@@ -57,7 +57,7 @@ In this task you will import the eShopOnWeb Git repository that will be used by 
     - **.github** folder container YAML GitHub workflow definitions.
     - **src** folder contains the .NET 6 website used on the lab scenarios.
 
-#### Task 3: (skip if done) Set main branch as default branch
+#### Task 3: Set main branch as default branch
 
 1. Go to **Repos>Branches**
 1. Hover on the **main** branch then click the ellipsis on the right of the column
@@ -76,28 +76,43 @@ In this task, you will create a service principal by using the Azure CLI, which 
 - Push the docker image to Azure Container Registry
 - Add a role assignment to allow Azure App Service pull the docker image from Azure Container Registry
 
-> **Note**: If you do already have a service principal, you can proceed directly to the next task.
+    > **Note**: If you do already have a service principal, you can proceed directly to the next task.
 
 You will need a service principal to deploy  Azure resources from Azure Pipelines.
 
 A service principal is automatically created by Azure Pipeline when you connect to an Azure subscription from inside a pipeline definition or when you create a new service connection from the project settings page (automatic option). You can also manually create the service principal from the portal or using Azure CLI and re-use it across projects. 
 
-1.  From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
+1.  From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with your UC credentials to use UC assigned subscription.
 1.  In the Azure portal, click on the **Cloud Shell** icon, located directly to the right of the search textbox at the top of the page. 
 1.  If prompted to select either **Bash** or **PowerShell**, select **Bash**. 
 
    >**Note**: If this is the first time you are starting **Cloud Shell** and you are presented with the **You have no storage mounted** message, select the subscription you are using in this lab, and select **Create storage**. 
 
-1.  From the **Bash** prompt, in the **Cloud Shell** pane, run the following commands to retrieve the values of the Azure subscription ID attribute: 
+1. Select Advanced Settings and configure the powershell with following settings.
+
+    | Field | Value |
+    | --- | --- |
+    | Cloud Shell region| **East US** |
+    | Resource group | **rg-az400-<6+2>** |
+    | Storage Account | **<6+2>sadev** |
+    | File Share | **<6+2>fsdev** | 
+
+1. Now navigate to the resource group created, and copy your **Subscription Name** and **Subscription ID** to a text file. You will need them later in this lab.
+
+1.  From the **Bash** prompt, in the **Cloud Shell** pane, run the following commands by replacing **your_subscription_name** and **your_subscription_id** with the values you coppied in above step: 
 
     ```
-    subscriptionName=$(az account show --query name --output tsv)
-    subscriptionId=$(az account show --query id --output tsv)
+    subscriptionName=your_subscription_name
+    subscriptionId=your_subscription_id
+    ```
+
+1. Verify your values by using below commands
+
+    ```
     echo $subscriptionName
     echo $subscriptionId
     ```
 
-    > **Note**: Copy both values to a text file. You will need them later in this lab.
 
 1.  From the **Bash** prompt, in the **Cloud Shell** pane, run the following command to create a service principal:
 
