@@ -14,7 +14,7 @@ lab:
 
 - **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://learn.microsoft.com/azure/devops/organizations/accounts/create-organization?view=azure-devops).
 
-- Identify an existing Azure subscription or create a new one.
+- Identify an existing Azure subscription 'CECH_SoIT_Bootcamp'assigned to you by university, you will need to use this for completing all your labs in the course.
 
 ## Lab overview
 
@@ -94,6 +94,7 @@ A Service Principal is automatically created by Azure Pipelines, when you connec
     | Cloud Shell region| **East US** |
     | Resource group | **az400m04l09-RG-<6+2>** |
     | Storage Account | **<6+2>sadev** |
+    | File Share | **<6+2>fsdev** | 
 
 1.  From the **Bash** prompt, in the **Cloud Shell** pane, run the following commands to retrieve the values of the Azure subscription ID and subscription name attributes:
 

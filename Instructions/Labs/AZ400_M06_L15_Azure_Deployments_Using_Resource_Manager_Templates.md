@@ -14,7 +14,7 @@ lab:
 
 - **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
 
-- Identify an existing Azure subscription or create a new one.
+- Identify an existing Azure subscription 'CECH_SoIT_Bootcamp'assigned to you by university, you will need to use this for completing all your labs in the course.
 
 - Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription.
 

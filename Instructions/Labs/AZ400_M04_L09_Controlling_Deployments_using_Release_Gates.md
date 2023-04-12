@@ -16,7 +16,7 @@ lab:
 
 - **Set up an Azure DevOps organization:** If you don't already have an Azure DevOps organization that you can use for this lab, create one by following the instructions available at [Create an organization or project collection](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/create-organization?view=azure-devops).
 
-- Identify an existing Azure subscription or create a new one.
+- Identify an existing Azure subscription 'CECH_SoIT_Bootcamp'assigned to you by university, you will need to use this for completing all your labs in the course.
 
 - Verify that you have a Microsoft account or an Azure AD account with the Owner role in the Azure subscription and the Global Administrator role in the Azure AD tenant associated with the Azure subscription. For details, refer to [List Azure role assignments using the Azure portal](https://docs.microsoft.com/en-us/azure/role-based-access-control/role-assignments-list-portal) and [View and assign administrator roles in Azure Active Directory](https://docs.microsoft.com/en-us/azure/active-directory/roles/manage-roles-portal#view-my-roles).
 
@@ -55,6 +55,8 @@ After you complete this lab, you will be able to:
 ## Instructions
 
 ### Exercise 0: Configure the lab prerequisites
+
+### You have been assigned a subscription 'CECH_SoIT_Bootcamp' subscription assigned from university you will be required to use that subscription for all the labs in the course.
 
 > **Note**: If you already created this project during previous labs, this exercise can be skipped.
 
@@ -110,7 +112,7 @@ In this task, you will add a YAML build definition to the existing project.
 
 In this task, you will create two Azure web apps representing the **Canary** and **Production** environments, into which you'll deploy the application via Azure Pipelines.
 
-1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with the user account that has the Owner role in the Azure subscription you will be using in this lab and has the role of the Global Administrator in the Azure AD tenant associated with this subscription.
+1. From the lab computer, start a web browser, navigate to the [**Azure Portal**](https://portal.azure.com), and sign in with your UC email.
 1. In the Azure portal, click the **Cloud Shell** icon, located directly to the right of the search textbox at the top of the page.
 1. If prompted to select either **Bash** or **PowerShell**, select **Bash**.
 
