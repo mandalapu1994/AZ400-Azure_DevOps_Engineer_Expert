@@ -223,36 +223,49 @@ In this task, you will modify the main template to reference the template module
 1. On the lab computer, in the web browser displaying the Azure Portal, click the **Cloud Shell** icon to open Cloud Shell.
    > **Note**: If you have the PowerShell session from earlier in this exercise still active, switch to Bash (next step).
 1. In the Cloud Shell pane, click **PowerShell**, in the dropdown menu, click **Bash** and, when prompted, click **Confirm**.
+1. Select Advanced Settings and configure the powershell with following settings.
+
+    | Field | Value |
+    | --- | --- |
+    | Cloud Shell region| **East US** |
+    | Resource group | **az400m06l15-RG-<6+2>** |
+    | Storage Account | **<6+2>sadev** |
+    | File Share | **<6+2>fsdev** | 
+
 1. In the Cloud Shell pane, click the **Upload/download files** icon and, in the dropdown menu, click **Upload**.
 1. In the **Open** dialog box, navigate to and select **C:\\templates\\main.bicep** and click **Open**.
 1. Follow the same steps to upload the **C:\\templates\\storage.bicep** file too.
 1. From a **Bash** session in the Cloud Shell pane, run the following to perform a deployment by using a newly uploaded template:
 
    ```bash
-   az deployment group what-if --name az400m06l15deployment --resource-group az400m06l15-RG --template-file main.bicep
+   az deployment group what-if --name az400m06l15deployment-<6+2> --resource-group az400m06l15-RG-<6+2> --template-file main.bicep
    ```
 
 1. When prompted to provide the value for 'adminUsername', type **Student** and press the **Enter** key.
 1. When prompted to provide the value for 'adminPassword', type **Pa55w.rd1234** and press the **Enter** key. (Password typing will not be shown)
 1. Review the result of this command which validates your deployment and let's you know if there is any errors in your templates. This is very valuable especially when deploying templates with many resources and in business critical cloud environments.
 
+   >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M06_L15_Azure_Deployments_Using_Resource_Manager_Templates.md)**: Show the output in cloud shell with your name or <6+2> visible on top.
+
 1. From a **Bash** session in the Cloud Shell pane, run the following to perform a deployment by using a newly uploaded template:
 
    ```bash
-   LOCATION='<region>'
+   LOCATION='eastus'
    ```
    > **Note**: replace the name of the region with a region close to your location. If you do not know what locations are available, run the `az account list-locations -o table` command.
   
    ```bash
-   az group create --name az400m06l15deployment --location $LOCATION
+   az group create --name az400m06l15deployment-<6+2> --location $LOCATION
    ```
 
    ```bash   
-   az deployment group create --name az400m06l15deployment --resource-group az400m06l15-RG --template-file main.bicep
+   az deployment group create --name az400m06l15deployment-<6+2> --resource-group az400m06l15-RG-<6+2> --template-file main.bicep
    ```
 
 1. When prompted to provide the value for 'adminUsername', type **Student** and press the **Enter** key.
 1. When prompted to provide the value for 'adminPassword', type **Pa55w.rd1234** and press the **Enter** key. (Password typing will not be shown)
+
+   >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M06_L15_Azure_Deployments_Using_Resource_Manager_Templates.md)**: Show the output in cloud shell with your name or <6+2> visible on top.
 
 1. If you receive errors when running the above command to deploy the template, try the following:
 
@@ -261,32 +274,7 @@ In this task, you will modify the main template to reference the template module
 
 > **Note**: As a next step, you could now modularize the remaining resource definitions in the main deployment template, such as the network and virtual machine resource definitions.
 
-> **Note**: If you are not planning on using the deployed resources, you should delete them to avoid associated charges. You can do so simply by deleting the resource group **az400m06l15-RG**.
-
-### Exercise 2: Remove the Azure lab resources
-
-In this exercise, you will remove the Azure resources provisioned in this lab to eliminate unexpected charges.
-
-> **Note**: Remember to remove any newly created Azure resources that you no longer use. Removing unused resources ensures you will not see unexpected charges.
-
-#### Task 1: Remove the Azure lab resources
-
-In this task, you will use Azure Cloud Shell to remove the Azure resources provisioned in this lab to eliminate unnecessary charges.
-
-1. In the Azure portal, open the **Bash** shell session within the **Cloud Shell** pane.
-1. List all resource groups created throughout the labs of this module by running the following command:
-
-   ```bash
-   az group list --query "[?starts_with(name,'az400m06l15-RG')].name" --output tsv
-   ```
-
-1. Delete all resource groups you created throughout the labs of this module by running the following command:
-
-   ```bash
-   az group list --query "[?starts_with(name,'az400m06l15-RG')].[name]" --output tsv | xargs -L1 bash -c 'az group delete --name $0 --no-wait --yes'
-   ```
-
-   > **Note**: The command executes asynchronously (as determined by the --nowait parameter), so while you will be able to run another Azure CLI command immediately afterwards within the same Bash session, it will take a few minutes before the resource groups are actually removed.
+> **Note**: If you are not planning on using the deployed resources, you should delete them to avoid associated charges. You can do so simply by deleting the resource group **az400m06l15-RG-<6+2>**.
 
 ## Review
 
