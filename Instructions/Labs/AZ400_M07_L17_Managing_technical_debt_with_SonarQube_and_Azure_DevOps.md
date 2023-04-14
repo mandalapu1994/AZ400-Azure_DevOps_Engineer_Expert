@@ -211,7 +211,7 @@ In this task, you will analyze SonarCloud reports.
 
     ![Sonarcloud Report](images/sonar-report.png)
 
-     >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L17_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md)**: Take a similar scr4eenshot with your name or <6+2> visible on top.
+     >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L17_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md)**: Take a similar screenshot with your name or <6+2> visible on top.
 
     > **Note**: The page has  metrics such as **Code Smells**, **Coverage**, **Duplications**, and **Size** (lines of code). The following table briefly explains each of these terms.
 
@@ -292,6 +292,9 @@ In this task, you will validate pull request integration between Azure DevOps an
 1. Sonarcloud will also decorate your PR with comments for your recent not recommended practises. You can also review the full report in Sonarcloud for details.
 
     ![PR quality gate failed](images/pr-qg-failed.png)
+
+    >**[Screenshot 4](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L17_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md)**: Take a similar screenshot with your name or <6+2> visible on top.
+
     ![Sonarcloud decorator](images/sonar-decorator.png)
 
 
