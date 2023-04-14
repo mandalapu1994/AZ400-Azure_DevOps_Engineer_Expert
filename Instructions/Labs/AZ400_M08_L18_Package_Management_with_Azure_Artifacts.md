@@ -16,6 +16,8 @@ lab:
 
 - Visual Studio 2022 Community Edition available from [Visual Studio Downloads page](https://visualstudio.microsoft.com/downloads/). Visual Studio 2022 installation should include **ASP<nolink>.NET and web development**, **Azure development**, and **.NET Core cross-platform development** workloads.
 
+- You Will require a windows machine to complete this lab, if you are using Mac you need to install VMWare Horizon to connect to the virtual machines. Detail of using MyDesk can be found at https://www.uc.edu/about/ucit/software-tools/mydesk.html
+
 ## Lab overview
 
 Azure Artifacts facilitate discovery, installation, and publishing NuGet, npm, and Maven packages in Azure DevOps. It's deeply integrated with other Azure DevOps features such as Build, making package management a seamless part of your existing workflows.
@@ -64,14 +66,11 @@ In this task, you will configure Visual Studio to prepare for the lab.
     > **Note**: You can access the project page directly by navigating to the [https://dev.azure.com/`<your-Azure-DevOps-account-name>`/Package%20Management%20with%20Azure%20Artifacts](https://dev.azure.com/`<your-Azure-DevOps-account-name>`/Package%20Management%20with%20Azure%20Artifacts) URL, where the `<your-Azure-DevOps-account-name>` placeholder, represents your account name.
 
 1. In the vertical menu on the left side of the **Package Management with Azure Artifacts** pane, click **Repos**.
-1. On the **Files** pane, click **Clone**, select the drop-down arrow next to **Clone in VS Code**, and, in the dropdown menu, select **Visual Studio**.
-1. If prompted whether to proceed, click **Open**.
-1. If prompted, sign in with the user account you used to set up your Azure DevOps organization.
-1. Within the Visual Studio interface, in the **Azure DevOps** pop-up window, accept the default local path and click **Clone**. This will automatically import the project into Visual Studio and open a new web browser tab displaying the Migration Report page.
+1. On the **Files** pane, click **Clone**, and copy the URL.
+1. Open Visual Studio, click **Git** in menu and **Clone Repository**. Here, past the URL copied and continue if asked enter UC credentials used for Azure DeveOps account creation and clone the repository.
 
     > **Note**: In the **Review Project and Solution Changes** dialog box, review the warnings about unsupported project types and click **OK**.
 
-1. Close the web browser tab displaying the Migration Report page.
 1. Leave Visual Studio window open for use in your lab.
 
 ### Exercise 1: Working with Azure Artifacts
@@ -191,6 +190,8 @@ In this task, you will import a NuGet package.
 
     > **Note**: The NuGet package doesn't add any value yet, but we managed to verify that the workflow works as intended.
 
+     >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M08_L18_Package_Management_with_Azure_Artifacts.md)**: Show the sucessful build of the **Parts Unlimited** along with the list of all packages in project.
+
 #### Task 4: Updating a NuGet package
 
 In this task, you will update a NuGet package.
@@ -255,6 +256,8 @@ In this task, you will update a NuGet package.
 
 1. When prompted, in the **Preview Changes** dialog box, click **OK**.
 1. Press the **F5** key to build and run the site. Verify that it works as expected.
+
+>**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M08_L18_Package_Management_with_Azure_Artifacts.md)**: Show the sucessful build of the **Parts Unlimited** along with the list of all packages in project along with code change in **DefaultShippingTaxCalculator.cs** the .
 
 ## Review
 
