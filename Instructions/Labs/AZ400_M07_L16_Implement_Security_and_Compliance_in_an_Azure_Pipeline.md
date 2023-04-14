@@ -89,7 +89,7 @@ In this task, you will activate WhiteSource Bolt in the newly generated Azure De
 
 1.  On the next page, select the desired Azure DevOps organization and **Install**. **Proceed to organization** once installed.
 
-1.  In your Azure DevOps navigate to **Organization Settings** and select **Mend** under **Extensions**. Provide your Work Email (**your lab personal account**, e.g. using AZ400learner@outlook.com instead of student@microsoft.com ), Company Name and other details and click **Create Account** button to start using the Free version.
+1.  In your Azure DevOps navigate to **Organization Settings** and select **Mend** under **Extensions**. Provide UC Email, Company Name as University of Cincinnati and other details and click **Create Account** button to start using the Free version.
 
     ![Get Mend Account](images/mend-account.png)
 
@@ -112,6 +112,8 @@ In this task, you will create and trigger a CI build pipeline within  Azure DevO
     - **Whitesource** task (still keeps the old name), to run the Mend tool analysis of OSS libraries.
     - **Publish Artifacts** the agents running this pipeline will upload the published web project.
 
+    >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L16_Implement_Security_and_Compliance_in_an_Azure_Pipeline.md)**: Show the sucessful pipeline run with your name or <6+2> visible on top.
+
 1.  While the pipeline is executing, lets **rename** it to identify it easier (as the project may be used for multiple labs). Go to **Pipelines/Pipelines** section in Azure DevOps project, click on the executing Pipeline name (it will get a default name), and look for **Rename/move** option on the ellipsis icon. Rename it to **eshoponweb-ci-mend** and click **Save**.
 
     ![Rename Pipeline](images/rename-pipeline.png)
@@ -121,6 +123,8 @@ In this task, you will create and trigger a CI build pipeline within  Azure DevO
 1. On the **Mend Bolt** tab, you can review the OSS security analysis. It will show you details around the inventory used, vulnerabilities found (and how to solve them), and an interesting report around library related Licenses. Take some time to review the report.
 
     ![Mend Results](images/mend-results.png)
+
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L16_Implement_Security_and_Compliance_in_an_Azure_Pipeline.md)**: Show Mend Bolt analysis with your name or <6+2> visible on top.
 
 ## Review
 

@@ -167,7 +167,9 @@ In this task, you will install and configure the SonarCloud Azure DevOps extensi
 
     ![Rename pipeline](images/sonar-rename.png)
 
-#### Task 3: Check pipeline results
+     >**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L17_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md)**: Show the sucessful pipeline run with your name or <6+2> visible on top.
+
+#### Task 4: Check pipeline results
 
 In this task, you will check pipeline results.
 
@@ -195,6 +197,8 @@ In this task, you will check pipeline results.
 
     ![Quality Gate passed](images/qg-passed.png)
 
+    >**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L17_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md)**: Take a similar scr4eenshot with your name or <6+2> visible on top.
+
 ### Exercise 2: Analyze SonarCloud reports
 
 In this exercise, you will analyze SonarCloud reports.
@@ -206,6 +210,8 @@ In this task, you will analyze SonarCloud reports.
 1. On the **Overview** tab of the SonarCloud project, we see a summary for the report about the **main branch evolution** . If you click **Main branch** icon (left column), and choose **Overall Code**, you will see a more detailed report.
 
     ![Sonarcloud Report](images/sonar-report.png)
+
+     >**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M07_L17_Managing_technical_debt_with_SonarQube_and_Azure_DevOps.md)**: Take a similar scr4eenshot with your name or <6+2> visible on top.
 
     > **Note**: The page has  metrics such as **Code Smells**, **Coverage**, **Duplications**, and **Size** (lines of code). The following table briefly explains each of these terms.
 
