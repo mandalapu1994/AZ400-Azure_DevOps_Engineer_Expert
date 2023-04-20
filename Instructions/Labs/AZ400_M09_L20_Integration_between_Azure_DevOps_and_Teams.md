@@ -40,7 +40,43 @@ After you complete this lab, you will be able to:
 
 ## Instructions
 
-### Exercise 0: Configure the lab prerequisites
+### Excercise 0: Setup Azure Developer Account
+## Instructions
+
+1. Create a new Microsoft email at live.com in Email format <6+2>@outlook.com example: mandalrt@outlook.com, Password: Give as per your choice. Save this information for your future use in the course.
+
+2. Join the Microsoft 365 Developer Program using the email created in above step [Developer Program | Microsoft 365 Dev Center by clicking Join](https://developer.microsoft.com/en-us/microsoft-365/dev-program)
+
+3. You will need to give below details to begin with, use ‘<6+2>Dev’ as your company in my case it was ‘mandalrtDev’
+
+![image](../images/lab1-2.png)
+![image](../images/lab1-3.png)
+![image](../images/lab1-4.png)
+
+4. Now signup for the E5 Subscription
+
+![image](../images/lab1-5.png)
+![image](../images/lab1-6.png)
+
+5. Use your 6+2 as your username in my case it is mandalrt, give a password that you will remember
+![image](../images/lab1-7.png)
+
+6. You will be asked for recovery phone when you click continue, once you verify your phone number and click setup you subscription will be activated and see the screen as below, it will create additional users for your use at this stage. 
+
+![image](../images/lab1-8.png)
+>**[Screenshot 1](https://github.com/venkatvvg/AZ-104-MicrosoftAzureAdministrator-master/blob/master/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.md)**: Showing the subscription is activated.
+
+7. From the screenshot above email mentioned under Administrator is your username.
+8. Save your username and password created for future use in the course. 
+
+
+9. Open [Azure portal](https://portal.azure.com) in a private browser and login using the email and password saved in the above step. You will use this account to complete tasks below.
+
+ >**Note**: In this course username and password saved in this task will be reffered as Azure Developer credentials.
+
+
+
+### Exercise 1: Configure the lab prerequisites
 
 In this exercise, you will set up the prerequisites for the lab, which consist of the preconfigured **Tailwind Traders** team project based on an Azure DevOps Demo Generator template and a team created in Microsoft Teams.
 
@@ -82,7 +118,7 @@ In this task, you will create a team in Microsoft Teams.
 1. On the **Some quick details about your private team** panel, replace **Give your team a name** with **Tailwind Traders** and click on **Create**.
 1. On the **Add members to Tailwind Traders** panel, click **Skip**.
 
-### Exercise 1: Integrate Azure Boards with Microsoft Teams
+### Exercise 2: Integrate Azure Boards with Microsoft Teams
 
 In this exercise, you will implement integration between Azure Boards and Microsoft Teams.
 
@@ -139,7 +175,7 @@ In this task, you will add Azure Boards Kanban boards to tabs in Microsoft Teams
 
 > **Note**: All the work can be monitored during the daily standup's and the updates are reflected in real-time, whenever the corresponding work items states change. You also have the option to modify the Kanban board from Microsoft Teams.
 
-### Exercise 2: Integrate Azure Pipelines with Microsoft Teams
+### Exercise 3: Integrate Azure Pipelines with Microsoft Teams
 
 In this exercise, you will implement integration between Azure Pipelines and Microsoft Teams.
 
