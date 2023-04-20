@@ -41,7 +41,8 @@ After you complete this lab, you will be able to:
 ## Instructions
 
 ### Excercise 0: Setup Azure Developer Account
-## Instructions
+
+#### Task 1: Creating Azure Developer Account (If you have this account from other course you can use it or create one using steps below)
 
 1. Create a new Microsoft email at live.com in Email format <6+2>@outlook.com example: mandalrt@outlook.com, Password: Give as per your choice. Save this information for your future use in the course.
 
@@ -49,22 +50,23 @@ After you complete this lab, you will be able to:
 
 3. You will need to give below details to begin with, use ‘<6+2>Dev’ as your company in my case it was ‘mandalrtDev’
 
-![image](../Labs/images/lab1-2.png)
-![image](../Labs/images/lab1-3.png)
-![image](../Labs/images/lab1-4.png)
+    ![image](../Labs/images/lab1-2.png)
+    ![image](../Labs/images/lab1-3.png)
+    ![image](../Labs/images/lab1-4.png)
 
 4. Now signup for the E5 Subscription
 
-![image](../Labs/images/lab1-5.png)
-![image](../Labs/images/lab1-6.png)
+    ![image](../Labs/images/lab1-5.png)
+    ![image](../Labs/images/lab1-6.png)
 
 5. Use your 6+2 as your username in my case it is mandalrt, give a password that you will remember
-![image](../Labs/images/lab1-7.png)
+    ![image](../Labs/images/lab1-7.png)
 
 6. You will be asked for recovery phone when you click continue, once you verify your phone number and click setup you subscription will be activated and see the screen as below, it will create additional users for your use at this stage. 
 
-![image](../Labs/images/lab1-8.png)
->**[Screenshot 1](https://github.com/venkatvvg/AZ-104-MicrosoftAzureAdministrator-master/blob/master/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.md)**: Showing the subscription is activated.
+    ![image](../Labs/images/lab1-8.png)
+
+>**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L20_Integration_between_Azure_DevOps_and_Teams.md)**: Showing the subscription is activated.
 
 7. From the screenshot above email mentioned under Administrator is your username.
 8. Save your username and password created for future use in the course. 
@@ -98,6 +100,9 @@ In this task, you will use Azure DevOps Demo Generator to generate a new project
     > **Note**: Wait for the process to complete. This should take about 2 minutes. In case the process fails, navigate to your DevOps organization, delete the project, and try again.
 
 1. On the **Create New Project** page, click **Navigate to project**.
+1. In the newly created project from **Overview** page use invite option to invite the developer account user you just created.
+
+>**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L20_Integration_between_Azure_DevOps_and_Teams.md)**: Show the newly invited user in the project along with your name visible on the top Right.
 
 #### Task 2: Create a team in Microsoft Teams
 
@@ -108,7 +113,7 @@ In this task, you will create a team in Microsoft Teams.
 
     > **Note**: Alternatively, you can use a web browser and navigate to the [Microsoft Teams launch page](https://teams.microsoft.com/dl/launcher/launcher.html?url=/_%23/l/home/0/0&type=home)
 
-1. When prompted to sign in, sign in with a user account that is part of the Microsoft 365 subscription and has access to your Azure DevOps organization.
+1. When prompted to sign in, sign in with developer account credentials and has access to your Azure DevOps organization.
 1. In Microsoft Teams, in the toolbar on the left side of the page, click **Teams** and then, at the bottom of the teams list, click **Join or create a team**.
 
     >**Note**: A team is a collection of people who gather together around a common goal.
@@ -116,7 +121,9 @@ In this task, you will create a team in Microsoft Teams.
 1. On the **Join or create team** pane, click **Create team**.
 1. On the **Create a team** panel, click *From scratch** and, on the **What kind of team will this be?** panel, click **Private**
 1. On the **Some quick details about your private team** panel, replace **Give your team a name** with **Tailwind Traders** and click on **Create**.
-1. On the **Add members to Tailwind Traders** panel, click **Skip**.
+1. On the **Add members to Tailwind Traders** panel, add your UC email as owner.
+
+>**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L20_Integration_between_Azure_DevOps_and_Teams.md)**: Show the team created with your UC user added as owner.
 
 ### Exercise 2: Integrate Azure Boards with Microsoft Teams
 
@@ -172,6 +179,8 @@ In this task, you will add Azure Boards Kanban boards to tabs in Microsoft Teams
 1. Switch to the Microsoft Teams window, ensure that the **General** channel of the newly created team **Tailwind Traders** is selected, and, in the upper section of the **General** pane, click the plus sign, next to **Posts, Files and Wiki tabs**. This will display the **Add a tab** panel.
 1. On the **Add a tab** panel, click **Website**, on the **Website** panel, set **Tab name** to **Tailwind Traders Team boards**, set the **URL** to the URL you just copied into Clipboards, and then click **Save**.
 1. In the Microsoft Teams window, with the **General** channel of the **Tailwind Traders** team selected, in the list of tabs in the top menu, click the newly added **Tailwind Traders Team boards** tab and ensure that it contains the content matching the **Tailwind Traders Team** board available in the Azure DevOps portal (you may need to Sign in).
+
+>**[Screenshot 4](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L20_Integration_between_Azure_DevOps_and_Teams.md)**: Show **Tailwind Traders Team boards** in Team channel.
 
 > **Note**: All the work can be monitored during the daily standup's and the updates are reflected in real-time, whenever the corresponding work items states change. You also have the option to modify the Kanban board from Microsoft Teams.
 
@@ -248,6 +257,8 @@ In this task, you will use customize subscriptions to Azure Pipelines in Microso
 1. In the **Azure Pipelines** **View subscriptions** panel, review the list of subscriptions and close the panel.
 1. Switch to the web browser displaying the **Tailwind Traders** project in the Azure DevOps portal, in the vertical menu bar at the far left of the Azure DevOps portal, click **Pipelines**, on the Pipelines pane, click the **Website-CI** entry, and, while on the Website-CI pane, click **Run Pipeline > Run**.
 1. The Teams channel will post notifications about the failed execution of the pipeline, as an expected behavior (the pipeline has missing setup).
+
+>**[Screenshot 5](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L20_Integration_between_Azure_DevOps_and_Teams.md)**: Show Team channel with notification from pipelines.
 
 ## Review
 
