@@ -49,21 +49,21 @@ After you complete this lab, you will be able to:
 
 3. You will need to give below details to begin with, use ‘<6+2>Dev’ as your company in my case it was ‘mandalrtDev’
 
-![image](../images/lab1-2.png)
-![image](../images/lab1-3.png)
-![image](../images/lab1-4.png)
+![image](../Labs/images/lab1-2.png)
+![image](../Labs/images/lab1-3.png)
+![image](../Labs/images/lab1-4.png)
 
 4. Now signup for the E5 Subscription
 
-![image](../images/lab1-5.png)
-![image](../images/lab1-6.png)
+![image](../Labs/images/lab1-5.png)
+![image](../Labs/images/lab1-6.png)
 
 5. Use your 6+2 as your username in my case it is mandalrt, give a password that you will remember
-![image](../images/lab1-7.png)
+![image](../Labs/images/lab1-7.png)
 
 6. You will be asked for recovery phone when you click continue, once you verify your phone number and click setup you subscription will be activated and see the screen as below, it will create additional users for your use at this stage. 
 
-![image](../images/lab1-8.png)
+![image](../Labs/images/lab1-8.png)
 >**[Screenshot 1](https://github.com/venkatvvg/AZ-104-MicrosoftAzureAdministrator-master/blob/master/Instructions/Labs/LAB_01-Manage_Azure_AD_Identities.md)**: Showing the subscription is activated.
 
 7. From the screenshot above email mentioned under Administrator is your username.
