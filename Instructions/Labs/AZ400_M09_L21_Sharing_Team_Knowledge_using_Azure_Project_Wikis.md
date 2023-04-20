@@ -83,6 +83,8 @@ In this task, you will publish a branch of an Azure DevOps repo as wiki.
 
 1. Review the content of  **GitHubActions** file and note the overall structure of the wiki, matching the structure of the underlying repo.
 
+>**[Screenshot 1](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L21_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md)**: Showing the published Wiki alson with your name visible on top right.
+
 #### Task 2: Manage content of a published wiki
 
 In this task, you will manage content of the wiki you published in the previous task.
@@ -111,6 +113,8 @@ In this task, you will manage content of the wiki you published in the previous 
 1. On the **GitHubActions.md** pane, click **Commit** and, on the **Commit** pane, click **Commit**.
 1. On the **Preview** tab of the **GitHubActions.md** pane, verify that the image is being displayed.
 1. In the vertical menu on the left side, click **Overview**, in the **Overview** section, select **Wiki**, verify that **Tailwind Traders (Documents)** appears in the upper section of the pane, and that the content of the **GitHubActions** pane includes the newly referenced image.
+
+>**[Screenshot 2](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L21_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md)**: Show the **Tailwind Traders (Documents)** appears in the upper section of the pane, and that the content of the **GitHubActions** pane includes the newly referenced image with your name visible on top right.
 
 ### Exercise 2: Create and manage a project wiki
 
@@ -183,6 +187,8 @@ In this task, you will manage the newly created project wiki.
 1. On the page editor pane, in the **Page title** text box, type **Project Design Overview**, click **Save**, and then click **Close**.
 1. Back in the pane listing the pages within the **Project Design** project wiki, locate the **Project Design Overview** entry, select it with the mouse pointer, drag and drop it above the **Project Design** page entry.
 1. Verify that the **Project Design Overview** entry is listed as the top level page with the home icon designating it as the wiki home page.
+
+>**[Screenshot 3](https://github.com/mandalapu1994/AZ400-Azure_DevOps_Engineer_Expert/blob/main/Instructions/Labs/AZ400_M09_L21_Sharing_Team_Knowledge_using_Azure_Project_Wikis.md)**: Show the **Project Design Overview** entry is listed as the top level page with the home icon designating it as the wiki home page. with your name visible on top right.
 
 ## Review
 
